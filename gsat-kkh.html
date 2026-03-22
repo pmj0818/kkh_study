@@ -12,10 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0F0F1A;--card:#1A1A2E;--card2:#16213E;
-  --gold:#FFD700;--gold2:#FFA500;
-  --green:#00E676;--red:#FF5252;--blue:#40C4FF;
-  --text:#F0F0F0;--sub:#8892A4;--shadow:0 8px 32px rgba(0,0,0,0.4);
+  --bg:#0F0F1A; --card:#1A1A2E; --card2:#16213E;
+  --gold:#FFD700; --gold2:#FFA500;
+  --green:#00E676; --red:#FF5252; --blue:#40C4FF;
+  --text:#F0F0F0; --sub:#8892A4; --shadow:0 8px 32px rgba(0,0,0,0.4);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{width:100%;min-height:100vh;overflow-x:hidden;}
@@ -27,12 +27,14 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 .home-hero{
   background:linear-gradient(135deg,#1A1A2E 0%,#16213E 50%,#0F3460 100%);
   padding:clamp(28px,6vw,48px) clamp(16px,4vw,24px) clamp(20px,5vw,32px);
-  text-align:center;position:relative;overflow:hidden;
+  text-align:center; position:relative; overflow:hidden;
 }
-.home-hero::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+.home-hero::before{
+  content:""; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
   background:radial-gradient(circle at 60% 40%,rgba(255,215,0,0.06) 0%,transparent 50%),
     radial-gradient(circle at 30% 70%,rgba(64,196,255,0.05) 0%,transparent 40%);
-  pointer-events:none;}
+  pointer-events:none;
+}
 .exam-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));
   color:#000;font-size:clamp(10px,2.5vw,12px);font-weight:700;padding:4px 14px;
   border-radius:20px;margin-bottom:12px;letter-spacing:1px;}
@@ -44,13 +46,11 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   border-radius:12px;padding:10px 20px;}
 .dday-num{font-family:"Black Han Sans",sans-serif;font-size:clamp(26px,7vw,34px);color:var(--gold);}
 .dday-label{font-size:clamp(11px,2.5vw,13px);color:var(--sub);}
-
-/* 과목 그리드 */
 .section-title{font-size:clamp(11px,2.5vw,12px);font-weight:700;color:var(--sub);
   letter-spacing:2px;margin-bottom:12px;}
 .subjects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .subj-card{background:var(--card);border-radius:16px;padding:14px 10px;text-align:center;
-  cursor:pointer;transition:all 0.15s;border:1.5px solid transparent;position:relative;overflow:hidden;}
+  cursor:pointer;transition:all 0.15s;border:1.5px solid transparent;}
 .subj-card:active{transform:scale(0.96);}
 .subj-card.active{border-color:var(--gold);background:rgba(255,215,0,0.07);}
 .subj-icon{font-size:clamp(24px,6vw,30px);margin-bottom:5px;}
@@ -58,23 +58,20 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 .subj-stat{font-size:clamp(10px,2.2vw,11px);color:var(--sub);margin-top:3px;}
 .subj-bar-bg{height:4px;background:rgba(255,255,255,0.1);border-radius:4px;margin-top:6px;}
 .subj-bar-fill{height:100%;border-radius:4px;transition:width 0.5s ease;}
-
-/* 통계 */
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 .stat-card{background:var(--card);border-radius:14px;padding:14px 10px;text-align:center;}
 .stat-num{font-family:"Black Han Sans",sans-serif;font-size:clamp(20px,5vw,26px);margin-bottom:2px;}
 .stat-label{font-size:clamp(10px,2.2vw,11px);color:var(--sub);}
-
-/* 홈 버튼 */
 .primary-btn{width:100%;padding:clamp(14px,3.5vw,18px);
   background:linear-gradient(135deg,var(--gold),var(--gold2));
   color:#000;border:none;border-radius:16px;
   font-family:"Black Han Sans",sans-serif;font-size:clamp(18px,4.5vw,22px);
-  box-shadow:0 4px 20px rgba(255,215,0,0.3);transition:all 0.15s;}
+  box-shadow:0 4px 20px rgba(255,215,0,0.3);}
 .primary-btn:active{transform:scale(0.97);}
 .secondary-btn{width:100%;padding:clamp(12px,3vw,14px);
-  background:var(--card);color:var(--sub);border:1px solid rgba(255,255,255,0.1);
-  border-radius:14px;font-size:clamp(13px,3vw,14px);font-weight:500;transition:all 0.15s;}
+  background:var(--card);color:var(--sub);
+  border:1px solid rgba(255,255,255,0.1);border-radius:14px;
+  font-size:clamp(13px,3vw,14px);font-weight:500;}
 .secondary-btn:active{transform:scale(0.97);}
 
 /* ── 셋업 ── */
@@ -93,9 +90,9 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 .error-msg{color:var(--red);font-size:13px;margin-top:8px;display:none;}
 .saved-notice{font-size:11px;color:var(--green);margin-bottom:10px;display:none;}
 .clear-key-btn{font-size:11px;color:var(--sub);background:none;border:none;
-  margin-top:8px;text-decoration:underline;}
+  margin-top:8px;text-decoration:underline;padding:4px 8px;}
 
-/* ── 게임 헤더 ── */
+/* ── 게임 ── */
 .game-header{background:var(--card2);padding:clamp(12px,3vw,16px) clamp(14px,4vw,20px);
   display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid rgba(255,255,255,0.06);}
@@ -103,39 +100,32 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 .hdr-btn{font-size:clamp(11px,2.5vw,13px);color:var(--sub);
   background:rgba(255,255,255,0.07);border:none;border-radius:8px;padding:6px 10px;}
 .hdr-btn:active{background:rgba(255,255,255,0.14);}
-
-/* 상태바 */
 .statusbar{display:flex;gap:6px;align-items:center;
   padding:clamp(8px,2vw,12px) clamp(14px,4vw,20px);flex-wrap:wrap;}
 .gbadge{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.07);
   border-radius:50px;padding:4px 12px;font-size:clamp(11px,2.5vw,13px);font-weight:500;}
-.gbadge.gold{color:var(--gold);}.gbadge.blue{color:var(--blue);}.gbadge.green{color:var(--green);}
-
-/* 진행바 */
+.gbadge.gold{color:var(--gold);} .gbadge.blue{color:var(--blue);} .gbadge.green{color:var(--green);}
 .levelbar-wrap{padding:0 clamp(14px,4vw,20px) 10px;}
 .levelbar-label{font-size:clamp(11px,2.5vw,12px);color:var(--sub);
   margin-bottom:5px;display:flex;justify-content:space-between;}
 .levelbar-bg{height:6px;background:rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;}
-.levelbar-fill{height:100%;border-radius:10px;transition:width 0.6s cubic-bezier(.4,0,.2,1);}
-
-/* 과목 탭 */
+.levelbar-fill{height:100%;border-radius:10px;transition:width 0.6s ease;}
 .subj-tabs{display:flex;gap:6px;padding:0 clamp(14px,4vw,20px) 12px;
   overflow-x:auto;scrollbar-width:none;}
 .subj-tabs::-webkit-scrollbar{display:none;}
 .subj-tab{flex-shrink:0;padding:7px 14px;background:rgba(255,255,255,0.07);
-  border:1.5px solid transparent;border-radius:20px;font-size:clamp(11px,2.5vw,13px);
-  font-weight:700;color:var(--sub);white-space:nowrap;transition:all 0.15s;}
+  border:1.5px solid transparent;border-radius:20px;
+  font-size:clamp(11px,2.5vw,13px);font-weight:700;color:var(--sub);white-space:nowrap;}
 .subj-tab:active{transform:scale(0.96);}
 .subj-tab.active{background:rgba(255,215,0,0.15);border-color:var(--gold);color:var(--gold);}
 
-/* 문제 카드 */
+/* ── 문제 카드 ── */
 .q-card{margin:0 clamp(10px,3vw,16px) 14px;background:var(--card);border-radius:20px;
   padding:clamp(18px,4vw,26px) clamp(16px,4vw,22px);box-shadow:var(--shadow);
-  min-height:220px;position:relative;overflow:hidden;
-  animation:cardIn 0.3s cubic-bezier(.4,0,.2,1);}
+  min-height:220px;animation:cardIn 0.3s ease;}
 @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .q-meta{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-.q-subj-badge{font-size:clamp(10px,2.2vw,11px);font-weight:700;letter-spacing:1px;
+.q-badge{font-size:clamp(10px,2.2vw,11px);font-weight:700;letter-spacing:1px;
   padding:3px 10px;border-radius:20px;background:rgba(255,215,0,0.15);color:var(--gold);}
 .q-year,.q-type{font-size:clamp(10px,2.2vw,11px);color:var(--sub);}
 .q-text{font-size:clamp(15px,3.8vw,18px);font-weight:500;color:var(--text);
@@ -143,74 +133,65 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 .q-passage{background:rgba(255,255,255,0.04);border-left:3px solid var(--gold);
   border-radius:0 10px 10px 0;padding:12px 14px;margin-bottom:14px;
   font-size:clamp(13px,3vw,15px);color:var(--sub);line-height:1.8;}
-
-/* 선택지 */
 .choices{display:flex;flex-direction:column;gap:8px;}
 .choice-btn{padding:clamp(12px,3vw,15px) clamp(14px,3.5vw,18px);
   border:1.5px solid rgba(255,255,255,0.1);border-radius:14px;
   background:rgba(255,255,255,0.04);font-size:clamp(13px,3.2vw,15px);
   font-weight:500;color:var(--text);text-align:left;line-height:1.5;
-  display:flex;align-items:flex-start;gap:10px;transition:all 0.15s;
+  display:flex;align-items:flex-start;gap:10px;
   user-select:none;-webkit-user-select:none;}
 .choice-btn:active:not(:disabled){background:rgba(255,215,0,0.08);border-color:rgba(255,215,0,0.4);}
-.choice-btn.correct{background:rgba(0,230,118,0.12);border-color:var(--green);color:var(--green);animation:pop 0.3s ease;}
-.choice-btn.wrong{background:rgba(255,82,82,0.1);border-color:var(--red);color:var(--red);animation:shake 0.3s ease;}
-.choice-num{min-width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
-  flex-shrink:0;margin-top:1px;}
+.choice-btn.correct{background:rgba(0,230,118,0.12);border-color:var(--green);color:var(--green);}
+.choice-btn.wrong{background:rgba(255,82,82,0.1);border-color:var(--red);color:var(--red);}
+.choice-num{min-width:24px;height:24px;border-radius:50%;
+  background:rgba(255,255,255,0.1);display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
 .choice-btn.correct .choice-num{background:var(--green);color:#000;}
 .choice-btn.wrong .choice-num{background:var(--red);color:#fff;}
-@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-
-/* 해설 */
 .explanation{margin-top:14px;padding:14px 16px;border-radius:14px;
-  font-size:clamp(14px,3.3vw,16px);line-height:1.8;font-weight:500;
-  display:none;animation:fadeUp 0.25s ease;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  font-size:clamp(14px,3.3vw,16px);line-height:1.8;font-weight:500;display:none;}
 .explanation.show{display:block;}
 .explanation.correct{background:rgba(0,230,118,0.1);color:#69F0AE;border:1px solid rgba(0,230,118,0.2);}
 .explanation.wrong{background:rgba(255,152,0,0.1);color:#FFD54F;border:1px solid rgba(255,152,0,0.2);}
-
-/* 버튼 행 */
 .btn-row{display:flex;gap:8px;padding:0 clamp(10px,3vw,16px) 16px;}
 .next-btn{flex:1;padding:clamp(13px,3vw,16px);
   background:linear-gradient(135deg,var(--gold),var(--gold2));
   color:#000;border:none;border-radius:16px;
   font-family:"Black Han Sans",sans-serif;font-size:clamp(16px,4vw,20px);
-  box-shadow:0 4px 16px rgba(255,215,0,0.25);display:none;transition:all 0.15s;}
+  box-shadow:0 4px 16px rgba(255,215,0,0.25);display:none;}
 .next-btn.show{display:block;}
 .next-btn:active{transform:scale(0.97);}
 .share-btn{padding:clamp(13px,3vw,16px) 14px;background:rgba(255,255,255,0.08);
   color:var(--sub);border:1px solid rgba(255,255,255,0.1);border-radius:16px;
-  font-size:clamp(13px,3vw,15px);font-weight:700;display:none;white-space:nowrap;transition:all 0.15s;}
+  font-size:clamp(13px,3vw,15px);font-weight:700;display:none;white-space:nowrap;}
 .share-btn.show{display:block;}
 .share-btn:active{transform:scale(0.97);}
 
-/* 로딩 */
-.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:200px;gap:16px;}
+/* ── 로딩 ── */
+.loading{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:200px;gap:16px;}
 .loading-dots{display:flex;gap:8px;}
 .loading-dots span{width:10px;height:10px;border-radius:50%;background:var(--gold);
   animation:bounce 0.8s infinite ease-in-out;}
 .loading-dots span:nth-child(2){background:var(--blue);animation-delay:0.15s;}
 .loading-dots span:nth-child(3){background:var(--green);animation-delay:0.3s;}
 @keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-12px)}}
-.loading p{font-size:14px;color:var(--sub);font-weight:500;}
-.loading-icon{font-size:clamp(36px,9vw,48px);animation:wiggle 1s infinite ease-in-out;display:inline-block;}
+.loading p{font-size:14px;color:var(--sub);}
+.loading-icon{font-size:clamp(36px,9vw,48px);display:inline-block;
+  animation:wiggle 1s infinite ease-in-out;}
 @keyframes wiggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
 
-/* 팝업 (정답/오답 메시지) */
+/* ── 팝업 ── */
 .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;
   display:flex;align-items:center;justify-content:center;
-  z-index:1000;pointer-events:none;animation:popupIn 0.35s ease;}
-@keyframes popupIn{from{opacity:0}to{opacity:1}}
-.popup-overlay.hide{animation:popupOut 0.4s ease forwards;}
-@keyframes popupOut{from{opacity:1}to{opacity:0}}
+  z-index:1000;pointer-events:none;animation:popIn 0.3s ease;}
+@keyframes popIn{from{opacity:0}to{opacity:1}}
+.popup-overlay.hide{animation:popOut 0.4s ease forwards;}
+@keyframes popOut{from{opacity:1}to{opacity:0}}
 .popup-card{border-radius:24px;padding:clamp(22px,5vw,36px) clamp(26px,6vw,44px);
   text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);
-  animation:popupCard 0.4s cubic-bezier(0.34,1.56,0.64,1);}
-@keyframes popupCard{
+  animation:popCard 0.4s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popCard{
   0%{transform:scale(0.3) rotate(-8deg);opacity:0}
   60%{transform:scale(1.06) rotate(2deg)}
   100%{transform:scale(1) rotate(0deg);opacity:1}}
@@ -218,7 +199,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   animation:heartBeat 0.6s infinite alternate;}
 @keyframes heartBeat{from{transform:scale(1)}to{transform:scale(1.15)}}
 .popup-title{font-family:"Black Han Sans",sans-serif;font-size:clamp(22px,6vw,30px);
-  color:white;line-height:1.4;text-shadow:0 2px 8px rgba(0,0,0,0.2);}
+  color:white;line-height:1.4;}
 .popup-sub{font-size:clamp(13px,3vw,15px);color:rgba(255,255,255,0.85);
   margin-top:8px;font-weight:500;}
 .particle{position:fixed;font-size:clamp(16px,4vw,24px);pointer-events:none;z-index:1001;
@@ -226,8 +207,6 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 @keyframes particleFloat{
   0%{opacity:1;transform:translateY(0) scale(1)}
   100%{opacity:0;transform:translateY(-180px) scale(0.3)}}
-
-/* 레벨업 */
 .levelup-fx{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
   font-family:"Black Han Sans",sans-serif;font-size:clamp(30px,8vw,44px);
   color:var(--gold);text-align:center;pointer-events:none;z-index:999;
@@ -237,8 +216,6 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   30%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}
   70%{opacity:1;transform:translate(-50%,-50%) scale(1)}
   100%{opacity:0;transform:translate(-50%,-60%) scale(1)}}
-
-/* 토스트 */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
   background:#1A1A2E;color:var(--text);border:1px solid rgba(255,215,0,0.3);
   font-size:13px;font-weight:500;padding:10px 20px;border-radius:50px;
@@ -250,26 +227,22 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 <body>
 <div class="wrap">
 
-<!-- ── 홈 화면 ── -->
+<!-- ── 홈 ── -->
 <div id="home-screen" style="display:none;">
   <div class="home-hero">
     <div class="exam-badge">🎯 고등학교 검정고시</div>
     <div class="hero-title">KKH<br>합격 프로젝트</div>
     <div class="hero-sub">AI 기출 유형 문제 · 과목별 맞춤 학습</div>
     <div class="dday-box">
-      <div>
-        <div class="dday-num" id="dday-num">D-30</div>
-        <div class="dday-label">시험까지</div>
-      </div>
+      <div class="dday-num" id="dday-num">D-30</div>
+      <div class="dday-label">시험까지</div>
     </div>
   </div>
-
   <div style="padding:clamp(16px,4vw,24px);">
     <div class="section-title">📚 과목별 학습 현황</div>
     <div class="subjects-grid" id="subjects-grid"></div>
   </div>
-
-  <div style="padding:0 clamp(16px,4vw,24px) clamp(16px,4vw,20px);">
+  <div style="padding:0 clamp(16px,4vw,24px) clamp(14px,3vw,18px);">
     <div class="stats-row">
       <div class="stat-card">
         <div class="stat-num" style="color:var(--gold)" id="stat-total">0</div>
@@ -285,10 +258,9 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
       </div>
     </div>
   </div>
-
-  <div style="padding:0 clamp(16px,4vw,24px);display:flex;flex-direction:column;gap:10px;">
-    <button class="primary-btn" data-action="goGame">🔥 문제 풀기</button>
-    <button class="secondary-btn" data-action="goSetup">🔑 API 키 변경</button>
+  <div style="padding:0 clamp(16px,4vw,24px);display:flex;flex-direction:column;gap:10px;padding-bottom:24px;">
+    <button id="btn-game" class="primary-btn">🔥 문제 풀기</button>
+    <button id="btn-setup" class="secondary-btn">🔑 API 키 변경</button>
   </div>
 </div>
 
@@ -300,27 +272,25 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   <div class="field-label">Anthropic API 키</div>
   <input class="text-input api-input" id="api-key-input" type="password" placeholder="sk-ant-..."/>
   <div class="saved-notice" id="saved-notice"></div>
-  <button class="primary-btn" id="start-btn" style="font-size:clamp(16px,4vw,20px);">🚀 시작하기</button>
+  <button id="btn-start" class="primary-btn" style="font-size:clamp(16px,4vw,20px);">🚀 시작하기</button>
   <div class="error-msg" id="setup-error">API 키를 확인해주세요. (sk-ant-로 시작)</div>
-  <button class="clear-key-btn" data-action="clearKey">🗑 저장된 API 키 삭제</button>
+  <button id="btn-clear" class="clear-key-btn">🗑 저장된 API 키 삭제</button>
 </div>
 
-<!-- ── 게임 화면 ── -->
+<!-- ── 게임 ── -->
 <div id="game-screen" style="display:none;">
   <div class="game-header">
     <div class="game-logo">🎓 KKH 합격 프로젝트</div>
     <div style="display:flex;gap:8px;">
-      <button class="hdr-btn">🏠 홈</button>
-      <button class="hdr-btn" data-action="goSetup">키 변경</button>
+      <button id="btn-home" class="hdr-btn">🏠 홈</button>
+      <button id="btn-key" class="hdr-btn">키 변경</button>
     </div>
   </div>
-
   <div class="statusbar">
     <div class="gbadge gold">⭐ <strong id="score-display">0</strong>점</div>
     <div class="gbadge blue">🎯 <strong id="acc-display">0%</strong></div>
     <div class="gbadge green">🔥 연속 <strong id="streak-display">0</strong></div>
   </div>
-
   <div class="levelbar-wrap">
     <div class="levelbar-label">
       <span id="subj-lv-label">국어 Lv.1</span>
@@ -330,9 +300,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
       <div class="levelbar-fill" id="levelbar" style="width:0%;background:var(--gold)"></div>
     </div>
   </div>
-
   <div class="subj-tabs" id="subj-tabs"></div>
-
   <div class="q-card" id="q-card">
     <div class="loading">
       <div class="loading-icon">📖</div>
@@ -340,7 +308,6 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
       <p>기출 문제 생성 중...</p>
     </div>
   </div>
-
   <div class="btn-row">
     <button class="next-btn" id="next-btn">다음 문제 →</button>
     <button class="share-btn" id="share-btn">공유 💬</button>
@@ -351,448 +318,469 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
 </div>
 
 <script>
-// ── 과목 데이터 ──
+// ════════════════════════════════════════
+// 데이터
+// ════════════════════════════════════════
 const SUBJECTS = [
-  {id:"korean", name:"국어",  icon:"📝", color:"#FF8A65"},
-  {id:"math",   name:"수학",  icon:"📐", color:"#FF5252", weak:true},
-  {id:"english",name:"영어",  icon:"🌍", color:"#40C4FF"},
-  {id:"social", name:"사회",  icon:"🏛️", color:"#CE93D8"},
-  {id:"science",name:"과학",  icon:"🔬", color:"#69F0AE", weak:true},
-  {id:"history",name:"한국사",icon:"📜", color:"#FFD54F"},
+  {id:"korean",  name:"국어",   icon:"📝", color:"#FF8A65"},
+  {id:"math",    name:"수학",   icon:"📐", color:"#FF5252", weak:true},
+  {id:"english", name:"영어",   icon:"🌍", color:"#40C4FF"},
+  {id:"social",  name:"사회",   icon:"🏛️", color:"#CE93D8"},
+  {id:"science", name:"과학",   icon:"🔬", color:"#69F0AE", weak:true},
+  {id:"history", name:"한국사", icon:"📜", color:"#FFD54F"},
 ];
-
-const SUBJ_PROMPTS = {
-  korean: "현대문학/고전문학/비문학 독해/문법/어휘 중 랜덤으로 선택해 실제 검정고시 국어 기출 유형 문제를 만드세요.",
-  math:   "수와연산/방정식/부등식/함수/도형/확률통계 중 랜덤으로 선택해 실제 검정고시 수학 기출 유형 문제를 만드세요. 계산 과정이 필요한 문제로 만드세요.",
-  english:"독해(주제/요지/빈칸/순서)/어법/어휘 중 랜덤으로 선택해 실제 검정고시 영어 기출 유형 문제를 만드세요. 영어 지문을 포함하세요.",
-  social: "민주주의/시장경제/국제관계/지리/사회문화 중 랜덤으로 선택해 실제 검정고시 사회 기출 유형 문제를 만드세요.",
-  science:"물리(역학/전기)/화학(원소/반응)/생물(세포/유전)/지구과학 중 랜덤으로 선택해 실제 검정고시 과학 기출 유형 문제를 만드세요.",
-  history:"선사시대부터 현대까지 주요 사건/인물/유물 중 랜덤으로 선택해 실제 검정고시 한국사 기출 유형 문제를 만드세요.",
+const PROMPTS = {
+  korean:  "현대문학/고전문학/비문학 독해/문법/어휘 중 랜덤 선택. 실제 검정고시 국어 기출 유형.",
+  math:    "수와연산/방정식/부등식/함수/도형/확률통계 중 랜덤 선택. 계산 과정이 필요한 문제.",
+  english: "독해(주제/요지/빈칸/순서)/어법/어휘 중 랜덤 선택. 영어 지문 포함.",
+  social:  "민주주의/시장경제/국제관계/지리/사회문화 중 랜덤 선택.",
+  science: "물리(역학/전기)/화학(원소/반응)/생물(세포/유전)/지구과학 중 랜덤 선택.",
+  history: "선사시대~현대 주요 사건/인물/유물 중 랜덤 선택.",
 };
+const SAVE_KEY = "kkh_gsat_v2";
+const XP_MAX   = 10;
 
-// ── 상수 ──
-const SAVE_KEY = "kkh_gsat_save";
-const XP_PER_LEVEL = 10;
-
-// ── 상태 ──
-let apiKey = "";
-let currentSubjIdx = 0;
-let answered = false;
-let score = 0, streak = 0, bestStreak = 0, totalAnswered = 0, totalCorrect = 0;
+// ════════════════════════════════════════
+// 상태
+// ════════════════════════════════════════
+let apiKey = "", subjIdx = 0, answered = false;
+let score = 0, streak = 0, bestStreak = 0, total = 0, correct = 0;
 let subjStats = {};
-let _nextQ = null, _fetchingNext = false;
+let _cache = null, _fetching = false;
+SUBJECTS.forEach(s => { subjStats[s.id] = {total:0, correct:0, xp:0, lv:1}; });
 
-SUBJECTS.forEach(s => { subjStats[s.id] = {answered:0, correct:0, xp:0, level:1}; });
-
-// ── 저장/불러오기 ──
+// ════════════════════════════════════════
+// 저장 / 불러오기
+// ════════════════════════════════════════
 function save(){
-  try{localStorage.setItem(SAVE_KEY, JSON.stringify(
-    {score, bestStreak, totalAnswered, totalCorrect, subjStats, apiKey}
-  ));}catch(e){}
+  try{ localStorage.setItem(SAVE_KEY, JSON.stringify(
+    {apiKey, subjIdx, score, streak, bestStreak, total, correct, subjStats}
+  )); }catch(e){}
 }
 function load(){
-  try{const r=localStorage.getItem(SAVE_KEY); return r?JSON.parse(r):null;}catch(e){return null;}
+  try{ const r = localStorage.getItem(SAVE_KEY); return r ? JSON.parse(r) : null; }
+  catch(e){ return null; }
 }
 
-// ── 유틸 ──
-function getAcc(){ return totalAnswered>0 ? Math.round(totalCorrect/totalAnswered*100) : 0; }
-function showToast(msg){
-  const t=document.getElementById("toast");
-  t.textContent=msg; t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"), 3000);
+// ════════════════════════════════════════
+// 유틸
+// ════════════════════════════════════════
+function acc(){ return total > 0 ? Math.round(correct/total*100) : 0; }
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 3000);
+}
+function screen(name){
+  ["home","setup","game"].forEach(n => {
+    document.getElementById(n+"-screen").style.display = n===name ? "block" : "none";
+  });
 }
 
-// ── 초기화 ──
-window.addEventListener("DOMContentLoaded", ()=>{
+// ════════════════════════════════════════
+// 버튼 이벤트 등록 — 아이폰/안드로이드 모두 대응
+// ════════════════════════════════════════
+function tap(id, fn){
+  const el = document.getElementById(id);
+  if(!el) return;
+  let busy = false;
+  function fire(e){
+    e.preventDefault(); e.stopPropagation();
+    if(busy) return; busy = true; setTimeout(() => busy = false, 400);
+    fn();
+  }
+  el.addEventListener("touchstart", fire, {passive: false});
+  el.addEventListener("click", function(){
+    if(busy) return; busy = true; setTimeout(() => busy = false, 400);
+    fn();
+  });
+}
+
+// ════════════════════════════════════════
+// 초기화
+// ════════════════════════════════════════
+window.addEventListener("DOMContentLoaded", () => {
+  // 저장 데이터 복원
   const saved = load();
   if(saved){
-    score=saved.score||0; bestStreak=saved.bestStreak||0;
-    totalAnswered=saved.totalAnswered||0; totalCorrect=saved.totalCorrect||0;
+    apiKey     = saved.apiKey     || "";
+    subjIdx    = saved.subjIdx    || 0;
+    score      = saved.score      || 0;
+    streak     = saved.streak     || 0;
+    bestStreak = saved.bestStreak || 0;
+    total      = saved.total      || 0;
+    correct    = saved.correct    || 0;
     if(saved.subjStats) subjStats = saved.subjStats;
-    if(saved.apiKey){
-      apiKey = saved.apiKey;
-      document.getElementById("api-key-input").value = saved.apiKey;
-    }
-    const n=document.getElementById("saved-notice");
-    n.style.display="block";
-    n.textContent="✅ 저장된 기록 발견! ("+totalAnswered+"문제, 정답률 "+getAcc()+"%)";
-    buildHomeScreen();
-    showScreen("home");
+    if(apiKey) document.getElementById("api-key-input").value = apiKey;
+    const n = document.getElementById("saved-notice");
+    n.style.display = "block";
+    n.textContent = "✅ 저장된 기록 발견! ("+total+"문제, 정답률 "+acc()+"%)";
   }
-  // D-Day 초기화
-  if(!localStorage.getItem("kkh_startday"))
-    localStorage.setItem("kkh_startday", Date.now().toString());
+
+  // D-Day 시작일 저장
+  if(!localStorage.getItem("kkh_start"))
+    localStorage.setItem("kkh_start", Date.now().toString());
+
+  // 버튼 이벤트 등록
+  tap("btn-start", startApp);
+  tap("btn-clear", clearKey);
+  tap("btn-game",  goGame);
+  tap("btn-setup", goSetup);
+  tap("btn-home",  goHome);
+  tap("btn-key",   goSetup);
+  tap("next-btn",  loadQuestion);
+  tap("share-btn", shareResult);
+
+  // 진입 화면 결정
+  if(saved && apiKey){
+    buildHome(); screen("home");
+  } else {
+    screen("setup");
+  }
 });
 
-// ── 화면 전환 ──
-function showScreen(name){
-  document.getElementById("home-screen").style.display = name==="home" ? "block" : "none";
-  document.getElementById("setup-screen").style.display = name==="setup" ? "block" : "none";
-  document.getElementById("game-screen").style.display = name==="game" ? "block" : "none";
-}
-
-function goHome(){
-  buildHomeScreen();
-  showScreen("home");
-}
-
-function goSetup(){
-  showScreen("setup");
-}
+// ════════════════════════════════════════
+// 화면 전환
+// ════════════════════════════════════════
+function goHome(){ buildHome(); screen("home"); }
+function goSetup(){ screen("setup"); }
 
 function startApp(){
   const key = document.getElementById("api-key-input").value.trim();
   if(!key.startsWith("sk-ant-")){
-    document.getElementById("setup-error").style.display="block"; return;
+    document.getElementById("setup-error").style.display = "block"; return;
   }
-  document.getElementById("setup-error").style.display="none";
-  apiKey = key;
-  save();
-  buildHomeScreen();
-  showScreen("home");
+  document.getElementById("setup-error").style.display = "none";
+  apiKey = key; save();
+  buildHome(); screen("home");
 }
 
 function clearKey(){
-  try{const r=load();if(r){delete r.apiKey;localStorage.setItem(SAVE_KEY,JSON.stringify(r));}}catch(e){}
-  apiKey=""; document.getElementById("api-key-input").value="";
-  showToast("🗑 저장된 API 키가 삭제됐어요");
+  apiKey = ""; document.getElementById("api-key-input").value = "";
+  try{ const r=load(); if(r){ r.apiKey=""; localStorage.setItem(SAVE_KEY,JSON.stringify(r)); } }catch(e){}
+  toast("🗑 저장된 API 키가 삭제됐어요");
 }
 
 function goGame(){
-  if(!apiKey){ showScreen("setup"); return; }
-  showScreen("game");
-  buildSubjTabs();
-  updateGameStats();
-  _nextQ=null;
+  if(!apiKey){ screen("setup"); return; }
+  screen("game");
+  buildTabs(); updateStats(); _cache = null;
   loadQuestion();
 }
 
-// ── 홈 화면 구성 ──
-function buildHomeScreen(){
-  // 과목 그리드
+// ════════════════════════════════════════
+// 홈 화면
+// ════════════════════════════════════════
+function buildHome(){
   const grid = document.getElementById("subjects-grid");
   grid.innerHTML = "";
-  SUBJECTS.forEach((s, i)=>{
-    const ss = subjStats[s.id]||{answered:0,correct:0,xp:0,level:1};
-    const acc = ss.answered>0 ? Math.round(ss.correct/ss.answered*100) : 0;
-    const xpPct = ((ss.xp||0)/XP_PER_LEVEL*100);
+  SUBJECTS.forEach((s, i) => {
+    const ss  = subjStats[s.id] || {total:0,correct:0,xp:0,lv:1};
+    const pct = ss.total > 0 ? Math.round(ss.correct/ss.total*100) : 0;
+    const xpp = ((ss.xp||0) / XP_MAX * 100);
     const card = document.createElement("div");
-    card.className = "subj-card" + (currentSubjIdx===i?" active":"");
-    card.innerHTML = `
-      <div class="subj-icon">${s.icon}${s.weak?'<span style="font-size:10px;color:var(--red);">⚠</span>':''}</div>
-      <div class="subj-name">${s.name}</div>
-      <div class="subj-stat">${ss.answered}문제 · ${acc}%</div>
-      <div class="subj-bar-bg"><div class="subj-bar-fill" style="width:${xpPct}%;background:${s.color}"></div></div>`;
-    card.onclick = ()=>{ currentSubjIdx=i; buildHomeScreen(); };
+    card.className = "subj-card" + (subjIdx===i ? " active" : "");
+    card.innerHTML =
+      `<div class="subj-icon">${s.icon}${s.weak?'<span style="font-size:10px;color:var(--red);">⚠</span>':''}</div>`+
+      `<div class="subj-name">${s.name}</div>`+
+      `<div class="subj-stat">${ss.total}문제 · ${pct}%</div>`+
+      `<div class="subj-bar-bg"><div class="subj-bar-fill" style="width:${xpp}%;background:${s.color}"></div></div>`;
+    // 과목 카드 터치
+    let busy = false;
+    function selectSubj(e){
+      e.preventDefault(); e.stopPropagation();
+      if(busy) return; busy=true; setTimeout(()=>busy=false,300);
+      subjIdx = i; buildHome();
+    }
+    card.addEventListener("touchstart", selectSubj, {passive:false});
+    card.addEventListener("click", function(){ if(busy) return; busy=true; setTimeout(()=>busy=false,300); subjIdx=i; buildHome(); });
     grid.appendChild(card);
   });
   // 통계
-  document.getElementById("stat-total").textContent = totalAnswered;
-  document.getElementById("stat-acc").textContent = getAcc()+"%";
+  document.getElementById("stat-total").textContent  = total;
+  document.getElementById("stat-acc").textContent    = acc()+"%";
   document.getElementById("stat-streak").textContent = bestStreak;
   // D-Day
-  const startDay = parseInt(localStorage.getItem("kkh_startday")||"0");
-  const elapsed = startDay ? Math.floor((Date.now()-startDay)/(1000*60*60*24)) : 0;
-  const remain = Math.max(0, 30-elapsed);
-  const dday = document.getElementById("dday-num");
-  dday.textContent = "D-"+remain;
-  dday.style.color = remain<=7 ? "var(--red)" : remain<=14 ? "var(--gold2)" : "var(--gold)";
+  const start   = parseInt(localStorage.getItem("kkh_start")||"0");
+  const elapsed = start ? Math.floor((Date.now()-start)/(86400000)) : 0;
+  const remain  = Math.max(0, 30-elapsed);
+  const el      = document.getElementById("dday-num");
+  el.textContent = "D-"+remain;
+  el.style.color = remain<=7 ? "var(--red)" : remain<=14 ? "var(--gold2)" : "var(--gold)";
 }
 
-// ── 과목 탭 ──
-function buildSubjTabs(){
+// ════════════════════════════════════════
+// 과목 탭
+// ════════════════════════════════════════
+function buildTabs(){
   const tabs = document.getElementById("subj-tabs");
   tabs.innerHTML = "";
-  SUBJECTS.forEach((s, i)=>{
+  SUBJECTS.forEach((s, i) => {
     const btn = document.createElement("button");
-    btn.className = "subj-tab" + (currentSubjIdx===i?" active":"");
+    btn.className = "subj-tab" + (subjIdx===i ? " active" : "");
     btn.textContent = s.icon+" "+s.name+(s.weak?" ⚠":"");
-    btn.onclick = ()=>{ currentSubjIdx=i; _nextQ=null; buildSubjTabs(); updateGameStats(); loadQuestion(); };
+    let busy = false;
+    function switchSubj(e){
+      e.preventDefault(); e.stopPropagation();
+      if(busy) return; busy=true; setTimeout(()=>busy=false,300);
+      subjIdx = i; _cache = null; buildTabs(); updateStats(); loadQuestion();
+    }
+    btn.addEventListener("touchstart", switchSubj, {passive:false});
+    btn.addEventListener("click", function(){ if(busy) return; busy=true; setTimeout(()=>busy=false,300); subjIdx=i; _cache=null; buildTabs(); updateStats(); loadQuestion(); });
     tabs.appendChild(btn);
   });
 }
 
-// ── 게임 통계 ──
-function updateGameStats(){
-  const s = SUBJECTS[currentSubjIdx];
-  const ss = subjStats[s.id]||{xp:0,level:1};
-  document.getElementById("score-display").textContent = score;
-  document.getElementById("acc-display").textContent = getAcc()+"%";
-  document.getElementById("streak-display").textContent = streak;
-  document.getElementById("subj-lv-label").textContent = s.name+" Lv."+(ss.level||1);
-  document.getElementById("xp-label").textContent = (ss.xp||0)+" / "+XP_PER_LEVEL;
+// ════════════════════════════════════════
+// 통계 업데이트
+// ════════════════════════════════════════
+function updateStats(){
+  const s  = SUBJECTS[subjIdx];
+  const ss = subjStats[s.id] || {xp:0, lv:1};
+  document.getElementById("score-display").textContent   = score;
+  document.getElementById("acc-display").textContent     = acc()+"%";
+  document.getElementById("streak-display").textContent  = streak;
+  document.getElementById("subj-lv-label").textContent   = s.name+" Lv."+(ss.lv||1);
+  document.getElementById("xp-label").textContent        = (ss.xp||0)+" / "+XP_MAX;
   const bar = document.getElementById("levelbar");
-  bar.style.width = ((ss.xp||0)/XP_PER_LEVEL*100)+"%";
+  bar.style.width      = ((ss.xp||0)/XP_MAX*100)+"%";
   bar.style.background = s.color;
 }
 
-// ── API 호출 ──
-async function fetchQuestion(){
-  const s = SUBJECTS[currentSubjIdx];
-  const prompt = `당신은 고등학교 검정고시 ${s.name} 문제를 출제하는 전문가입니다.
-${SUBJ_PROMPTS[s.id]}
-반드시 아래 JSON 형식으로만 응답하세요. 다른 말 금지.
-{"type":"문제유형","year":"기출유사","question":"문제텍스트","passage":"지문(없으면 빈문자열)","choices":["①선택지1","②선택지2","③선택지3","④선택지4","⑤선택지5"],"answer":0,"explanation":"상세해설 3~4문장. 왜 정답인지, 왜 다른 선택지가 틀렸는지 포함."}
-choices는 5개, answer는 정답 인덱스(0~4). 정답 위치는 매번 랜덤으로.`;
-
-  const res = await fetch("https://api.anthropic.com/v1/messages",{
-    method:"POST",
-    headers:{"Content-Type":"application/json","x-api-key":apiKey,
-      "anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
-    body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:700,
-      messages:[{role:"user",content:prompt}]})
+// ════════════════════════════════════════
+// API 호출
+// ════════════════════════════════════════
+async function fetchQ(){
+  const s = SUBJECTS[subjIdx];
+  const prompt =
+    `당신은 고등학교 검정고시 ${s.name} 전문 출제위원입니다.\n`+
+    `${PROMPTS[s.id]}\n`+
+    `반드시 아래 JSON만 응답하세요. 다른 말 금지.\n`+
+    `{"type":"문제유형","year":"기출유사","question":"문제","passage":"지문(없으면 빈문자열)",`+
+    `"choices":["①1","②2","③3","④4","⑤5"],"answer":0,"explanation":"해설 3~4문장"}\n`+
+    `choices 5개, answer는 정답 인덱스(0~4), 매번 랜덤 위치.`;
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true"
+    },
+    body: JSON.stringify({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 700,
+      messages: [{role:"user", content:prompt}]
+    })
   });
   const data = await res.json();
   if(data.error) throw new Error(data.error.message);
   return JSON.parse(data.content[0].text.trim().replace(/```json|```/g,"").trim());
 }
 
-async function prefetchNext(){
-  if(_fetchingNext||_nextQ) return;
-  _fetchingNext = true;
-  try{ _nextQ = await fetchQuestion(); }catch(e){}
-  _fetchingNext = false;
+async function prefetch(){
+  if(_fetching || _cache) return;
+  _fetching = true;
+  try{ _cache = await fetchQ(); }catch(e){}
+  _fetching = false;
 }
 
 async function loadQuestion(){
   answered = false;
   document.getElementById("next-btn").classList.remove("show");
   document.getElementById("share-btn").classList.remove("show");
-  // 캐시 있으면 즉시
-  if(_nextQ){
-    const q=_nextQ; _nextQ=null;
-    renderQuestion(q); prefetchNext(); return;
+  if(_cache){
+    const q = _cache; _cache = null;
+    render(q); prefetch(); return;
   }
-  const s = SUBJECTS[currentSubjIdx];
+  const s = SUBJECTS[subjIdx];
   document.getElementById("q-card").innerHTML =
-    `<div class="loading"><div class="loading-icon">${s.icon}</div><div class="loading-dots"><span></span><span></span><span></span></div><p>${s.name} 문제 생성 중...</p></div>`;
+    `<div class="loading"><div class="loading-icon">${s.icon}</div>`+
+    `<div class="loading-dots"><span></span><span></span><span></span></div>`+
+    `<p>${s.name} 문제 생성 중...</p></div>`;
   try{
-    const q = await fetchQuestion();
-    renderQuestion(q); prefetchNext();
+    const q = await fetchQ();
+    render(q); prefetch();
   }catch(e){
     document.getElementById("q-card").innerHTML =
-      `<div class="loading"><div style="font-size:36px;">😢</div><p style="color:var(--red);font-weight:500;">문제 생성 실패</p><p style="font-size:12px;color:var(--sub)">${e.message}</p></div>`;
+      `<div class="loading"><div style="font-size:36px;">😢</div>`+
+      `<p style="color:var(--red);font-weight:500;">문제 생성 실패</p>`+
+      `<p style="font-size:12px;color:var(--sub)">${e.message}</p></div>`;
     document.getElementById("next-btn").textContent = "다시 시도 →";
     document.getElementById("next-btn").classList.add("show");
   }
 }
 
-// ── 문제 렌더링 ──
-function renderQuestion(q){
-  const s = SUBJECTS[currentSubjIdx];
-  const correctIdx = q.answer;
-  window._qData = {correctIdx, explanation:q.explanation, correctText:q.choices[correctIdx]};
-
-  const passageHTML = q.passage ? `<div class="q-passage">${q.passage}</div>` : "";
-  const choicesHTML = q.choices.map((c,i)=>
-    `<button class="choice-btn" data-idx="${i}" onclick="handleChoice(this)">
-      <span class="choice-num">${i+1}</span><span>${c}</span>
-    </button>`
+// ════════════════════════════════════════
+// 문제 렌더링
+// ════════════════════════════════════════
+function render(q){
+  const s = SUBJECTS[subjIdx];
+  window._q = {ci: q.answer, exp: q.explanation, ct: q.choices[q.answer]};
+  const passHTML = q.passage ? `<div class="q-passage">${q.passage}</div>` : "";
+  const choiceHTML = q.choices.map((c,i) =>
+    `<button class="choice-btn" id="choice-${i}">`+
+    `<span class="choice-num">${i+1}</span><span>${c}</span></button>`
   ).join("");
+  document.getElementById("q-card").innerHTML =
+    `<div class="q-meta">`+
+    `<span class="q-badge">${s.icon} ${s.name}</span>`+
+    `<span class="q-year">${q.year||"기출유사"}</span>`+
+    `<span class="q-type">${q.type||""}</span></div>`+
+    `<div class="q-text">${q.question}</div>`+
+    passHTML+
+    `<div class="choices">${choiceHTML}</div>`+
+    `<div class="explanation" id="explanation"></div>`;
 
-  document.getElementById("q-card").innerHTML = `
-    <div class="q-meta">
-      <span class="q-subj-badge">${s.icon} ${s.name}</span>
-      <span class="q-year">${q.year||"기출유사"}</span>
-      <span class="q-type">${q.type||""}</span>
-    </div>
-    <div class="q-text">${q.question}</div>
-    ${passageHTML}
-    <div class="choices">${choicesHTML}</div>
-    <div class="explanation" id="explanation"></div>`;
+  // 선택지 이벤트 — touchstart + click
+  for(let i=0; i<q.choices.length; i++){
+    const btn = document.getElementById("choice-"+i);
+    let busy = false;
+    function makeHandler(idx){
+      function fire(e){
+        e.preventDefault(); e.stopPropagation();
+        if(busy) return; busy=true;
+        pick(idx);
+      }
+      btn.addEventListener("touchstart", fire, {passive:false});
+      btn.addEventListener("click", function(e){
+        if(busy) return; busy=true;
+        pick(idx);
+      });
+    }
+    makeHandler(i);
+  }
 }
 
-function handleChoice(btn){
+function pick(idx){
   if(answered) return;
-  const {correctIdx, explanation, correctText} = window._qData;
-  const clickedIdx = parseInt(btn.dataset.idx);
-  const isCorrect = clickedIdx === correctIdx;
   answered = true;
-
-  document.querySelectorAll(".choice-btn").forEach(b=>{
+  const {ci, exp, ct} = window._q;
+  const isOk = idx === ci;
+  for(let i=0; i<5; i++){
+    const b = document.getElementById("choice-"+i);
+    if(!b) continue;
     b.disabled = true;
-    if(parseInt(b.dataset.idx)===correctIdx) b.classList.add("correct");
-  });
-  if(!isCorrect) btn.classList.add("wrong");
-
+    if(i===ci) b.classList.add("correct");
+  }
+  if(!isOk) document.getElementById("choice-"+idx).classList.add("wrong");
   // 해설
   const expl = document.getElementById("explanation");
-  expl.className = "explanation "+(isCorrect?"correct":"wrong")+" show";
-  const msgs = ["🎯 정답!","✅ 맞았어요!","🔥 정확해요!"];
-  expl.innerHTML = isCorrect
-    ? `<strong>${msgs[Math.floor(Math.random()*msgs.length)]}</strong><br>${explanation}`
-    : `<strong>❌ 오답! 정답: ${correctText}</strong><br>${explanation}`;
-
+  const msgs = ["🎯 정답!", "✅ 맞았어요!", "🔥 정확해요!"];
+  expl.className = "explanation "+(isOk?"correct":"wrong")+" show";
+  expl.innerHTML = isOk
+    ? `<strong>${msgs[Math.floor(Math.random()*msgs.length)]}</strong><br>${exp}`
+    : `<strong>❌ 오답! 정답: ${ct}</strong><br>${exp}`;
   document.getElementById("next-btn").classList.add("show");
   document.getElementById("share-btn").classList.add("show");
-
-  // 점수 계산
-  totalAnswered++;
-  const s = SUBJECTS[currentSubjIdx];
-  const ss = subjStats[s.id]||{answered:0,correct:0,xp:0,level:1};
-  ss.answered++;
-
-  if(isCorrect){
-    totalCorrect++; streak++;
+  // 점수
+  total++;
+  const s  = SUBJECTS[subjIdx];
+  const ss = subjStats[s.id] || {total:0,correct:0,xp:0,lv:1};
+  ss.total++;
+  if(isOk){
+    correct++; streak++;
     if(streak>bestStreak) bestStreak=streak;
     const bonus = streak>=3 ? 2 : 1;
-    score += 10*bonus;
-    ss.correct++;
+    score += 10*bonus; ss.correct++;
     ss.xp = (ss.xp||0)+bonus;
-    if(ss.xp>=XP_PER_LEVEL){
-      ss.xp -= XP_PER_LEVEL; ss.level=(ss.level||1)+1;
-      showLevelUp(s.name, ss.level);
-    }
-    if(streak===5) showToast("🔥 5연속! 엄청난 집중력이에요!");
-    else if(streak===3) showToast("🎯 3연속! 보너스 2배!");
-    showPopup(true);
+    if(ss.xp >= XP_MAX){ ss.xp-=XP_MAX; ss.lv=(ss.lv||1)+1; showLvUp(s.name,ss.lv); }
+    if(streak===5)      toast("🔥 5연속! 엄청난 집중력이에요!");
+    else if(streak===3) toast("🎯 3연속! 보너스 2배!");
+    popup(true);
   } else {
-    streak=0;
-    ss.xp = Math.max(0,(ss.xp||0)-1);
-    showPopup(false);
+    streak=0; ss.xp=Math.max(0,(ss.xp||0)-1);
+    popup(false);
   }
-
-  subjStats[s.id] = ss;
-  updateGameStats();
-  save();
+  subjStats[s.id]=ss; updateStats(); save();
 }
 
-// ── 정답/오답 팝업 ──
-function showPopup(isCorrect){
-  const correctMsgs = [
-    {emoji:"💕", title:"아들~
-사랑해!", sub:"잘 했어 😊"},
-    {emoji:"❤️", title:"아들~
-사랑해!", sub:"역시 우리 아들 ✨"},
-    {emoji:"💖", title:"아들~
-사랑해!", sub:"너무 잘 하고 있어 🎉"},
-    {emoji:"💗", title:"아들~
-사랑해!", sub:"엄마가 응원해 💪"},
-    {emoji:"💝", title:"아들~
-사랑해!", sub:"합격할 수 있어! 🏆"},
-  ];
-  const wrongMsgs = [
-    {emoji:"💙", title:"아들~
-다시해보자", sub:"할 수 있어! 다시 도전!"},
-    {emoji:"💙", title:"아들~
-다시해보자", sub:"괜찮아, 이번엔 맞출 수 있어!"},
-    {emoji:"💙", title:"아들~
-다시해보자", sub:"엄마가 믿어 💪"},
-    {emoji:"💙", title:"아들~
-다시해보자", sub:"틀려야 실력이 늘어! 화이팅!"},
-  ];
+// ════════════════════════════════════════
+// 팝업 (정답 / 오답)
+// ════════════════════════════════════════
+const OK_MSGS = [
+  {e:"💕", t:"아들~
+사랑해!", s:"잘 했어 😊"},
+  {e:"❤️", t:"아들~
+사랑해!", s:"역시 우리 아들 ✨"},
+  {e:"💖", t:"아들~
+사랑해!", s:"너무 잘 하고 있어 🎉"},
+  {e:"💗", t:"아들~
+사랑해!", s:"엄마가 응원해 💪"},
+  {e:"💝", t:"아들~
+사랑해!", s:"합격할 수 있어! 🏆"},
+];
+const NO_MSGS = [
+  {e:"💙", t:"아들~
+다시해보자", s:"할 수 있어! 다시 도전!"},
+  {e:"💙", t:"아들~
+다시해보자", s:"괜찮아, 이번엔 맞출 수 있어!"},
+  {e:"💙", t:"아들~
+다시해보자", s:"엄마가 믿어 💪"},
+  {e:"💙", t:"아들~
+다시해보자", s:"틀려야 실력이 늘어! 화이팅!"},
+];
 
-  const m = isCorrect
-    ? (streak>=5 ? {emoji:"🔥💖🔥", title:"아들~
-사랑해!", sub:"5연속!! 엄마 감동 ㅠㅠ 💕"} : correctMsgs[Math.floor(Math.random()*correctMsgs.length)])
-    : wrongMsgs[Math.floor(Math.random()*wrongMsgs.length)];
-
-  const bg = isCorrect
+function popup(isOk){
+  const pool = isOk ? OK_MSGS : NO_MSGS;
+  const m = (isOk && streak>=5)
+    ? {e:"🔥💖🔥", t:"아들~
+사랑해!", s:"5연속!! 엄마 감동 ㅠㅠ 💕"}
+    : pool[Math.floor(Math.random()*pool.length)];
+  const bg = isOk
     ? "linear-gradient(135deg,#FF1744,#E91E63,#FF4081)"
     : "linear-gradient(135deg,#1565C0,#1976D2,#42A5F5)";
-
-  const popup = document.createElement("div");
-  popup.className = "popup-overlay";
-  popup.innerHTML = `<div class="popup-card" style="background:${bg};">
-    <div class="popup-emoji">${m.emoji}</div>
-    <div class="popup-title">${m.title}</div>
-    <div class="popup-sub">${m.sub}</div>
-  </div>`;
-  document.body.appendChild(popup);
-
-  // 파티클
-  const particles = isCorrect
+  const ov = document.createElement("div");
+  ov.className = "popup-overlay";
+  ov.innerHTML =
+    `<div class="popup-card" style="background:${bg};">`+
+    `<div class="popup-emoji">${m.e}</div>`+
+    `<div class="popup-title">${m.t}</div>`+
+    `<div class="popup-sub">${m.s}</div></div>`;
+  document.body.appendChild(ov);
+  const pts = isOk
     ? ["❤️","💕","💖","💗","💝","💓"]
     : ["💙","🔵","💪","✊","⭐","🌟"];
-  for(let i=0;i<8;i++){
-    setTimeout(()=>{
-      const p = document.createElement("div");
-      p.className = "particle";
-      p.textContent = particles[Math.floor(Math.random()*particles.length)];
-      p.style.left = Math.random()*90+5+"%";
-      p.style.top = Math.random()*60+20+"%";
-      p.style.animationDelay = Math.random()*0.3+"s";
-      document.body.appendChild(p);
-      setTimeout(()=>p.remove(), 2000);
-    }, i*70);
-  }
-
-  setTimeout(()=>{
-    popup.classList.add("hide");
-    setTimeout(()=>popup.remove(), 450);
-  }, 1800);
+  for(let i=0;i<8;i++) setTimeout(()=>{
+    const p=document.createElement("div"); p.className="particle";
+    p.textContent=pts[Math.floor(Math.random()*pts.length)];
+    p.style.left=Math.random()*90+5+"%";
+    p.style.top=Math.random()*60+20+"%";
+    p.style.animationDelay=Math.random()*0.3+"s";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),2000);
+  }, i*70);
+  setTimeout(()=>{ ov.classList.add("hide"); setTimeout(()=>ov.remove(),450); }, 1800);
 }
 
-function showLevelUp(subjName, lv){
-  const el = document.createElement("div");
-  el.className = "levelup-fx";
-  el.innerHTML = `🏆 ${subjName}<br><span style="font-size:clamp(16px,4vw,20px);">레벨 ${lv} 달성!</span>`;
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(), 1500);
+function showLvUp(name, lv){
+  const el=document.createElement("div"); el.className="levelup-fx";
+  el.innerHTML=`🏆 ${name}<br><span style="font-size:clamp(16px,4vw,20px);">레벨 ${lv} 달성!</span>`;
+  document.body.appendChild(el); setTimeout(()=>el.remove(),1500);
 }
 
-// ── 공유 ──
+// ════════════════════════════════════════
+// 공유
+// ════════════════════════════════════════
 function shareResult(){
   const lines = SUBJECTS.map(s=>{
-    const ss = subjStats[s.id]||{answered:0,correct:0};
-    const acc = ss.answered>0 ? Math.round(ss.correct/ss.answered*100) : 0;
-    return `${s.icon}${s.name}: ${acc}% (${ss.answered}문제)`;
+    const ss=subjStats[s.id]||{total:0,correct:0};
+    const p=ss.total>0?Math.round(ss.correct/ss.total*100):0;
+    return `${s.icon}${s.name}: ${p}% (${ss.total}문제)`;
   }).join("\n");
-  const text = `📚 KKH 검정고시 합격 프로젝트\n\n🎯 총 ${totalAnswered}문제 · 정답률 ${getAcc()}%\n⭐ 점수: ${score}점 · 최고연속: ${bestStreak}\n\n${lines}\n\n화이팅! 💪 ${window.location.href}`;
-  if(navigator.share){ navigator.share({title:"KKH 검정고시", text}).catch(()=>copyClip(text)); }
+  const text =
+    `📚 KKH 검정고시 합격 프로젝트\n\n`+
+    `🎯 총 ${total}문제 · 정답률 ${acc()}%\n`+
+    `⭐ 점수: ${score}점 · 최고연속: ${bestStreak}\n\n`+
+    `${lines}\n\n화이팅! 💪 ${window.location.href}`;
+  if(navigator.share) navigator.share({title:"KKH 검정고시",text}).catch(()=>copyClip(text));
   else copyClip(text);
 }
-function copyClip(text){
-  navigator.clipboard.writeText(text)
-    .then(()=>showToast("📋 복사됐어요!"))
-    .catch(()=>showToast("공유 내용을 복사해주세요"));
+function copyClip(t){
+  navigator.clipboard.writeText(t)
+    .then(()=>toast("📋 복사됐어요!"))
+    .catch(()=>toast("공유 내용을 복사해주세요"));
 }
-
-// ── 모든 버튼 이벤트 등록 (standalone 모드 대응) ──
-function bindBtn(id, fn){
-  const el = document.getElementById(id);
-  if(!el) return;
-  let busy = false;
-  function go(e){
-    e.preventDefault(); e.stopPropagation();
-    if(busy) return; busy=true; setTimeout(()=>busy=false, 400);
-    fn();
-  }
-  el.addEventListener('touchstart', go, {passive:false});
-  el.addEventListener('click', function(e){
-    if(busy) return; busy=true; setTimeout(()=>busy=false, 400);
-    fn();
-  });
-}
-
-window.addEventListener('DOMContentLoaded', ()=>{
-  // DOMContentLoaded 이후 재등록 (동적 요소 대응)
-  setTimeout(()=>{
-    bindBtn('start-btn',  startApp);
-    bindBtn('next-btn',   loadQuestion);
-    bindBtn('share-btn',  shareResult);
-    document.querySelectorAll('[data-action]').forEach(el=>{
-      const action = el.dataset.action;
-      let busy=false;
-      el.addEventListener('touchstart', e=>{
-        e.preventDefault();e.stopPropagation();
-        if(busy)return;busy=true;setTimeout(()=>busy=false,400);
-        if(action==='goSetup')  goSetup();
-        if(action==='clearKey') clearKey();
-        if(action==='goHome')   goHome();
-        if(action==='goGame')   goGame();
-      }, {passive:false});
-      el.addEventListener('click', e=>{
-        e.preventDefault();e.stopPropagation();
-        if(busy)return;busy=true;setTimeout(()=>busy=false,400);
-        if(action==='goSetup')  goSetup();
-        if(action==='clearKey') clearKey();
-        if(action==='goHome')   goHome();
-        if(action==='goGame')   goGame();
-      });
-    });
-  }, 100);
-}, {once:true});
 </script>
 </body>
 </html>
