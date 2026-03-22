@@ -758,7 +758,11 @@ function bindBtn(id, fn){
     if(busy) return; busy=true; setTimeout(()=>busy=false, 400);
     fn();
   }
-  el.addEventListener('pointerdown', go);
+  el.addEventListener('touchstart', go, {passive:false});
+  el.addEventListener('click', function(e){
+    if(busy) return; busy=true; setTimeout(()=>busy=false, 400);
+    fn();
+  });
 }
 
 window.addEventListener('DOMContentLoaded', ()=>{
@@ -770,7 +774,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
     document.querySelectorAll('[data-action]').forEach(el=>{
       const action = el.dataset.action;
       let busy=false;
-      el.addEventListener('pointerdown', e=>{
+      el.addEventListener('touchstart', e=>{
+        e.preventDefault();e.stopPropagation();
+        if(busy)return;busy=true;setTimeout(()=>busy=false,400);
+        if(action==='goSetup')  goSetup();
+        if(action==='clearKey') clearKey();
+        if(action==='goHome')   goHome();
+        if(action==='goGame')   goGame();
+      }, {passive:false});
+      el.addEventListener('click', e=>{
         e.preventDefault();e.stopPropagation();
         if(busy)return;busy=true;setTimeout(()=>busy=false,400);
         if(action==='goSetup')  goSetup();
