@@ -287,8 +287,8 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   </div>
 
   <div style="padding:0 clamp(16px,4vw,24px);display:flex;flex-direction:column;gap:10px;">
-    <button class="primary-btn" onclick="goGame()">🔥 문제 풀기</button>
-    <button class="secondary-btn" onclick="goSetup()">🔑 API 키 변경</button>
+    <button class="primary-btn" data-action="goGame">🔥 문제 풀기</button>
+    <button class="secondary-btn" data-action="goSetup">🔑 API 키 변경</button>
   </div>
 </div>
 
@@ -300,9 +300,9 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   <div class="field-label">Anthropic API 키</div>
   <input class="text-input api-input" id="api-key-input" type="password" placeholder="sk-ant-..."/>
   <div class="saved-notice" id="saved-notice"></div>
-  <button class="primary-btn" onclick="startApp()" style="font-size:clamp(16px,4vw,20px);">🚀 시작하기</button>
+  <button class="primary-btn" id="start-btn" style="font-size:clamp(16px,4vw,20px);">🚀 시작하기</button>
   <div class="error-msg" id="setup-error">API 키를 확인해주세요. (sk-ant-로 시작)</div>
-  <button class="clear-key-btn" onclick="clearKey()">🗑 저장된 API 키 삭제</button>
+  <button class="clear-key-btn" data-action="clearKey">🗑 저장된 API 키 삭제</button>
 </div>
 
 <!-- ── 게임 화면 ── -->
@@ -310,8 +310,8 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   <div class="game-header">
     <div class="game-logo">🎓 KKH 합격 프로젝트</div>
     <div style="display:flex;gap:8px;">
-      <button class="hdr-btn" onclick="goHome()">🏠 홈</button>
-      <button class="hdr-btn" onclick="goSetup()">키 변경</button>
+      <button class="hdr-btn">🏠 홈</button>
+      <button class="hdr-btn" data-action="goSetup">키 변경</button>
     </div>
   </div>
 
@@ -342,8 +342,8 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;cursor:
   </div>
 
   <div class="btn-row">
-    <button class="next-btn" id="next-btn" onclick="loadQuestion()">다음 문제 →</button>
-    <button class="share-btn" id="share-btn" onclick="shareResult()">공유 💬</button>
+    <button class="next-btn" id="next-btn">다음 문제 →</button>
+    <button class="share-btn" id="share-btn">공유 💬</button>
   </div>
 </div>
 
@@ -747,6 +747,40 @@ function copyClip(text){
     .then(()=>showToast("📋 복사됐어요!"))
     .catch(()=>showToast("공유 내용을 복사해주세요"));
 }
+
+// ── 모든 버튼 이벤트 등록 (standalone 모드 대응) ──
+function bindBtn(id, fn){
+  const el = document.getElementById(id);
+  if(!el) return;
+  let busy = false;
+  function go(e){
+    e.preventDefault(); e.stopPropagation();
+    if(busy) return; busy=true; setTimeout(()=>busy=false, 400);
+    fn();
+  }
+  el.addEventListener('pointerdown', go);
+}
+
+window.addEventListener('DOMContentLoaded', ()=>{
+  // DOMContentLoaded 이후 재등록 (동적 요소 대응)
+  setTimeout(()=>{
+    bindBtn('start-btn',  startApp);
+    bindBtn('next-btn',   loadQuestion);
+    bindBtn('share-btn',  shareResult);
+    document.querySelectorAll('[data-action]').forEach(el=>{
+      const action = el.dataset.action;
+      let busy=false;
+      el.addEventListener('pointerdown', e=>{
+        e.preventDefault();e.stopPropagation();
+        if(busy)return;busy=true;setTimeout(()=>busy=false,400);
+        if(action==='goSetup')  goSetup();
+        if(action==='clearKey') clearKey();
+        if(action==='goHome')   goHome();
+        if(action==='goGame')   goGame();
+      });
+    });
+  }, 100);
+}, {once:true});
 </script>
 </body>
 </html>
